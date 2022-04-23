@@ -1,5 +1,15 @@
-project: mayhem-cmake-example
+# Namespaced project name that the target belongs to
+project: nathanjackson/hackathon
+
+# Target name (should be unique within the project)
 target: fuzzme
 
+# Base image to run the binary in.
+image: ghcr.io/rishabh1024/fuzzme:latest
+
+# List of commands used to test the target
 cmds:
-  - cmd: /fuzzme
+
+    # Command used to start the target, "@@" is the input file
+    # (when "@@" is omitted Mayhem defaults to stdin inputs)
+    - cmd: /fuzzme
